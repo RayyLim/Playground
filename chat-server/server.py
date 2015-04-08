@@ -39,7 +39,7 @@ class ChatServer():
 
     def handle_disconnected_connection(self, sock):
         print "Client (%s) is offline" % (sock,)
-        self.broadcast_data("\rClient (%s) is offline" % (sock.fileno(),))
+        self.broadcast_data("\rClient (%s) is offline\n" % (sock.fileno(),))
         sock.close()
         if sock in self._connection_list:
             self._connection_list.remove(sock)
